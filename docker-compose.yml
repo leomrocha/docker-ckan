@@ -21,12 +21,12 @@ services:
     volumes:
       - ckan_storage:/var/lib/ckan
 
-  datapusher:
-    container_name: datapusher
-    build:
-      context: datapusher/
-    ports:
-      - "8800:8800"
+  # datapusher:
+  #   container_name: datapusher
+  #   build:
+  #     context: datapusher/
+  #   ports:
+  #     - "8800:8800"
 
   db:
     container_name: db

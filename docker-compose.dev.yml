@@ -13,20 +13,20 @@ services:
       - db
       - solr
       - redis
-      - datapusher
+      - airflow
     ports:
       - "0.0.0.0:${CKAN_PORT}:5000"
     volumes:
       - ./src:/srv/app/src_extensions
       - ckan_storage:/var/lib/ckan
     
-
-  datapusher:
-    container_name: datapusher
+  airflow:
+    container_name: airflow
     build:
-      context: datapusher/
+      context: airflow/
+      dockerfile: Dockerfile
     ports:
-      - "8800:8800"
+      - "8080:8080"
 
   db:
     container_name: db
