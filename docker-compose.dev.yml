@@ -13,20 +13,20 @@ services:
       - db
       - solr
       - redis
-      - airflow
+      # - airflow
     ports:
       - "0.0.0.0:${CKAN_PORT}:5000"
     volumes:
       - ./src:/srv/app/src_extensions
       - ckan_storage:/var/lib/ckan
     
-  airflow:
-    container_name: airflow
-    build:
-      context: airflow/
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
+  # airflow:
+  #   container_name: airflow
+  #   build:
+  #     context: airflow/
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8080:8080"
 
   db:
     container_name: db

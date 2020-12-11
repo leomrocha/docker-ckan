@@ -72,8 +72,6 @@ RUN pip install -e git+${GIT_URL}@${GIT_BRANCH}#egg=ckan && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.plugins = ${CKAN__PLUGINS}" && \
     paster --plugin=ckan config-tool ${CKAN_INI} "ckan.site_url = ${CKAN__SITE_URL}"
 
-
-
 # Create a local user and group to run the app
 RUN addgroup -g 92 -S ckan && \
     adduser -u 92 -h /srv/app -H -D -S -G ckan ckan
